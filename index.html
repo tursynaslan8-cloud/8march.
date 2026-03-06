@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8 Наурыз Құттықтау</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff8fc7,#ffd6ec,#fff0f7);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+overflow:hidden;
+}
+
+.container{
+background:white;
+width:90%;
+max-width:600px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+h1{
+color:#e60073;
+font-size:28px;
+}
+
+p{
+font-size:16px;
+line-height:1.6;
+}
+
+.heart{
+position:fixed;
+bottom:-10px;
+color:#ff4da6;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ФОН МУЗЫКА -->
+<audio id="music" autoplay loop muted>
+<source src="suyemin.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>🌸 8 Наурыз Құтты Болсын! 🌸</h1>
+
+<p>
+Құрметті 24-РПО-1К(1) тобының арулары!<br><br>
+
+Сіздерді келіп жеткен 8 наурыз әйелдер күнімен құттықтаймыз, 
+жүздеріңізден нұр кетпесін, әрқашан арамызда жарқырап, 
+топтың сұлулығымен сәнін келтіріп жүре беріңіздер.<br><br>
+
+Сіздерді 10 Наурыз күні болатын ерекше кешке шақырамыз.<br><br>
+
+📍 Мекен-жайы: Ауэзова 60<br>
+⏰ Уақыты: 17:00<br>
+✨ Дресс-код: әдемі, жарқын болып келулеріңізді қалаймыз<br><br>
+
+Бұл кешті ерекше көңіл-күймен қарсы алып, жылы естеліктеріңізге 
+қосуыңызға тілектеспіз.<br><br>
+
+Құрметпен 24-РПО-1К(1) тобының ұлдары.<br>
+Барлықтарыңызды күтеміз
+</p>
+
+</div>
+
+<script>
+
+let music = document.getElementById("music");
+
+// сайт жүктелгенде музыка старт
+window.addEventListener("load", () => {
+music.play();
+});
+
+// экран басқанда дыбыс қосылады
+document.addEventListener("click", () => {
+music.muted = false;
+music.play();
+});
+
+// жүректер анимациясы
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},500);
+
+</script>
+
+</body>
+</html>
